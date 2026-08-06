@@ -142,3 +142,28 @@ The four-item awareness scale showed a Cronbach's Alpha of .773, comfortably exc
 **Future Use Intent by Individual Initiative Awareness**
 Prior awareness or use of each initiative did not significantly predict interest in future use: Code with Google (χ² = 2.782, df = 4, p = .595; Pearson R = -.056, p = .577; Spearman ρ = -.025, p = .802), Grow with Google (χ² = 3.465, p = .483; R = .023, p = .817; ρ = .058, p = .566), Google Career Certificates (χ² = 1.930, p = .749; R = .069, p = .494; ρ = .077, p = .444), and Google Build Your Future (χ² = 2.995, p = .559; R = .088, p = .384; ρ = .097, p = .338) all showed negligible, non-significant correlations. This indicates that future interest in these programmes is independent of past exposure. Combined with the earlier finding that most students remain open to future use despite low current awareness, this suggests interest is latent and broadly distributed across the student population rather than concentrated among those who have already encountered these programmes pointing toward broad-based awareness campaigns as more effective than targeted follow-up with existing users.
 
+
+09\_recommendation_rating
+
+---
+
+**Frequencies**
+The overwhelming majority of students would recommend Google apps to other students or teachers, with only a small minority responding "No" and a slightly larger group unsure. Usability ratings are similarly positive, with the large majority rating the apps 4 or 5 stars and no respondents at the lowest end of the scale. This strong endorsement pattern holds even though awareness of Google's specific career/skills initiatives was comparatively low in earlier files, suggesting students value the core apps themselves independent of the broader Google ecosystem.
+
+**Recommendation by Year of Study**
+A significant association was found between recommendation and year of study (χ² = 13.542, df = 4, p = .009). All students who would not recommend the apps were III Year students, while I and II Year students showed proportionally higher rates of uncertainty. This suggests III Year students hold more polarized views — either clearly positive or clearly negative — while younger students are more likely to be undecided. As with earlier significant results in this dataset, a notable share of cells had expected counts below 5, so this pattern should be read as indicative rather than definitive.
+
+**Recommendation by Stream**
+No significant relationship was found between recommendation and stream (χ² = 4.999, df = 6, p = .544), indicating willingness to recommend Google apps is broadly consistent across academic disciplines.
+
+**Usability Rating by Year of Study and Stream**
+Usability rating showed no significant relationship with either year of study (χ² = 7.594, df = 6, p = .269) or stream (χ² = 3.691, df = 9, p = .931). Positive usability perceptions are consistent across the student population regardless of academic year or discipline.
+
+**Recommendation and Satisfaction**
+A significant association was found between recommendation and satisfaction (χ² = 13.949, df = 6, p = .030), reinforced by significant positive correlations (r = .240, p = .016; ρ = .280, p = .005). Students who are most satisfied with Google apps' results are overwhelmingly likely to recommend them, confirming that satisfaction is a strong driver of advocacy behaviour.
+**Usability Rating and Satisfaction**
+Usability rating and satisfaction show the strongest correlation across the dataset (r = -.468, ρ = -.468, both p < .001), indicating that higher satisfaction is closely tied to higher perceived usability. Given the scale coding, the negative sign reflects the two variables moving together in the expected direction rather than an inverse relationship — this is worth a final confirmation against the coding key before it goes into the report, given how central this finding is.
+
+**Regression: Predictors of Usability Rating**
+A multiple regression predicting usability rating from satisfaction, perceived effectiveness for assignments, perceived academic impact, and the Usage Index produced a significant model (F = 10.067, df = 4, p < .001), explaining 29.8% of the variance in usability rating (R² = .298, Adjusted R² = .268). Satisfaction (Beta = -.327, p = .001) and effectiveness for assignments (Beta = -.286, p = .005) were significant predictors, while academic impact (Beta = -.048, p = .608) and the Usage Index (Beta = -.036, p = .681) were not. As with the correlation above, the negative Betas reflect the coding direction rather than an inverse relationship — satisfaction and effectiveness are the two variables most strongly driving usability perception once the coding is accounted for, while overall usage frequency and perceived academic impact add little beyond what these two already explain. All VIF values remained well below the concern threshold (1.052–1.340), confirming no multicollinearity issues in the model.
+
