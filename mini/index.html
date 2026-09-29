@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Enter the passcode</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      display:grid;place-items:center;padding:20px;
+      background:linear-gradient(180deg,#070b2b 0%,#231a63 40%,#7b2f9a 75%,#e8588f 100%);
+      color:#fff;font-family:'Cinzel Decorative',serif;text-align:center;overflow:hidden
+    }
+    .box{width:min(90vw,380px)}
+    h1{font-size:clamp(1.3rem,6vw,1.8rem);margin-bottom:26px;
+       text-shadow:1px 1px 0 #ff7eb6,2px 2px 0 #d64888,3px 4px 12px rgba(0,0,0,.5)}
+    input{
+      width:100%;padding:14px 18px;font-size:1.2rem;text-align:center;letter-spacing:.15em;
+      color:#fff;background:rgba(255,255,255,.12);
+      border:2px solid rgba(255,230,170,.7);border-radius:40px;outline:none;
+      box-shadow:0 0 22px rgba(255,210,122,.35)
+    }
+    input:focus{border-color:#ffd27a;box-shadow:0 0 30px rgba(255,210,122,.7)}
+    input::placeholder{color:rgba(255,255,255,.55);letter-spacing:.05em}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Enter the passcode</h1>
+    <input id="pass" type="password" placeholder="passcode"
+           autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" autofocus>
+  </div>
+
+  <script>
+    const input = document.getElementById('pass');
+    input.addEventListener('input', () => {
+      if (input.value.trim().toLowerCase() === 'shibal') {
+        sessionStorage.setItem('hb_ok', '1');
+        location.replace('hb-7k3q.html');
+      }
+    });
+  </script>
+</body>
+</html>

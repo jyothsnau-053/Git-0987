@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>
+  if (sessionStorage.getItem('hb_ok') !== '1') {
+    document.documentElement.style.display = 'none';
+    location.replace('index.html');
+  }
+</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- PAGE TITLE: change this to your friend's name -->
+  <title>Dan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Dancing+Script:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="bd.css">
+  <!-- Confetti used by the "Make a wish" button -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <!--
+    BACKGROUND LAYERS (behind all content)
+    Put every image in the assets folder (same folder as HBA.mp3 / WB.m4a).
+    Missing files are hidden until you add them.
+    - assets/background.jpg  full-screen photo behind the sky (optional)
+    - .sky / .moon / .cloud / .hills: painted night-sky scene
+    - #bg: canvas for stars, shooting stars, and petals (see bd.js)
+  -->
+  <img src="assets/bg4.jpeg" alt="" aria-hidden="true" style="position:fixed;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:-6;pointer-events:none">
+
+  <div class="moon" aria-hidden="true"></div>
+  <div class="cloud c1" aria-hidden="true"></div>
+  <div class="cloud c2" aria-hidden="true"></div>
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+
+  <!--
+    MUSIC
+    Both tracks loop after the visitor taps the start overlay (browsers block autoplay with sound).
+    Volume is set in bd.js: HBA = full (1.0), WB = half (0.5) of the page mix.
+  -->
+  <audio id="trackHba" src="assets/HBA.mp3" loop preload="auto"></audio>
+  <audio id="trackWb" src="assets/WB.m4a" loop preload="auto"></audio>
+
+  <!-- START GATE: unlocks audio on first tap, then hides -->
+  <button class="start-gate" id="startGate" type="button">
+    <span>Tap to open</span>
+    <small>just something different..</small>
+  </button>
+
+  <!-- HERO: banner, portrait, typewriter, name -->
+  <header class="hero">
+    <!-- Add this file: assets/banner.png -->
+    <img class="bunting" src="assets/banner.png" alt="Happy birthday banner">
+    <div class="portrait tilt" data-depth="1">
+      <!-- Add this file: assets/portrait.png -->
+      <img src="assets/potrait.png" alt="Birthday portrait">
+      <i class="spark s1">✦</i><i class="spark s2">✧</i><i class="spark s3">✦</i><i class="spark s4">✧</i>
+    </div>
+    <h1 class="typewrap" aria-live="polite">
+      <span id="typewriter"></span><i class="cursor" aria-hidden="true"></i>
+    </h1>
+    <!-- FRIEND NAME shown under the typewriter -->
+    <p class="hero-name">Namratha</p>
+    <a class="scroll-hint" href="#letter" aria-label="Scroll to the letter">scroll down</a>
+  </header>
+
+  <main>
+    <!-- LETTER: rewrite these paragraphs -->
+    <section class="wrap" id="letter" data-r>
+      <div class="letter tilt">
+        <span class="heart" aria-hidden="true">❤️</span>
+        <h2>Annyeong!</h2>
+        <p style="--d:.1s">hi, this is your <strong>jyoshii</strong></p>
+        <p style="--d:.25s">wishing you a very <mark>happy birthday</mark></p>
+        <p style="--d:.4s">scroll down — there are a few surprises waiting</p>
+        <p style="--d:.55s">hope your day is full of good things</p>
+      </div>
+    </section>
+
+    <!-- CAKE + WISH BUTTON: confetti and lanterns -->
+    <section class="cake-sec wrap" data-r>
+      <div class="cake-stage">
+        <span class="ring"></span>
+        <img class="cake" src="assets/cake.svg" alt="Birthday cake">
+      </div>
+      <button class="pill" id="wishBtn" type="button">Make a wish</button>
+      <p class="wish" id="wishMsg" aria-live="polite"></p>
+    </section>
+
+    <!-- PHOTO STACK: drop jpgs into assets, then edit captions -->
+    <section class="memories wrap" data-r>
+      <h2 class="sec-title">Bootipul BABE</h2>
+      <div class="stack" id="stack" aria-label="Photo memories">
+        <figure class="polaroid">
+          <!-- Add this file: assets/1.jpg -->
+          <img src="assets/1.jpg" alt="Memory 1" draggable="false">
+          <figcaption>🐣🐣</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <!-- Add this file: assets/2.jpg -->
+          <img src="assets/2.jpg" alt="Memory 2" draggable="false">
+          <figcaption>📸</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <!-- Add this file: assets/3.jpg -->
+          <img src="assets/3.jpg" alt="Memory 3" draggable="false">
+          <figcaption>🍽️</figcaption>
+        </figure>
+        <figure class="polaroid">
+          <!-- Add this file: assets/4.jpg -->
+          <img src="assets/5.png" alt="Memory 4" draggable="false">
+          <figcaption>🫂</figcaption>
+    
+      </div>
+      <div class="ctrl">
+        <button id="prevImg" class="round" type="button" aria-label="Previous photo">‹</button>
+        <span id="count" class="count">1 / 4</span>
+        <button id="nextImg" class="round" type="button" aria-label="Next photo">›</button>
+      </div>
+    </section>
+
+    <!-- FLIP CARD: front + inside message -->
+    <section class="final wrap" data-r>
+      <h2 class="sec-title">A card for you</h2>
+      <div class="card-wrap tilt" id="cardContainer">
+        <div class="card" id="card">
+          <div class="side front">
+            <h3>Happy Birthday</h3>
+            <p>Tap to open this card</p>
+            <img src="assets/cake.svg" alt="">
+            <button class="pill dark" id="toggleButton" type="button">Open card</button>
+          </div>
+          <div class="side back">
+            <h3>Happy Birthday</h3>
+            <p>May this year be filled with lots of love and happiness. May all your wishes come true, be blessed with good health and 💸💸 (share them with me too😉). And yes... In future, please fall for a genuinely nice guy if you fall for anyone😭😭🤣🤣</p>
+            <p>I hope this year brings you endless laughter, beautiful adventures and all the love your heart can hold.</p>
+          
+            <p>-- Lots of love 💜💜</p>
+            <p>   Jytss</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER: keep this personal, no credits -->
+  <footer class="foot" data-r>
+    <p>Sengil Chukkhayae!🫰</p>
+  </footer>
+
+  <!-- Floating lanterns spawned by the wish button -->
+  <div id="lanterns" aria-hidden="true"></div>
+
+  <script src="bd.js"></script>
+</body>
+</html>
