@@ -1,6 +1,0 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480">
-  <rect width="400" height="480" rx="40" fill="#ffd6ea"/>
-  <circle cx="200" cy="170" r="80" fill="#fff3df"/>
-  <ellipse cx="200" cy="380" rx="120" ry="90" fill="#fff3df"/>
-  <text x="200" y="250" text-anchor="middle" font-size="18" font-family="Georgia, serif" fill="#3a0f2a">Replace assets/portrait.png</text>
-</svg>
